@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.top_title{
+    background-color: black;
+    text-align: center;
+    font-size: x-large;
+    color: coral;
+    border-style: solid;
+    border-width: medium;
+    border-color: coral;
+    height: auto;
+    width: 100%;
+}
+
+.mid_container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    top:auto;
+    height: 100%;
+}
+
+.lift_selection_bar{
+    background-color: black;
+    text-align: center;
+    color: coral;
+    border-style: solid;
+    border-width: medium;
+    border-color: coral;
+    height: 100%;
+}
+
+input{
+    border-style: solid;
+    border-width: medium;
+    border-color: coral;
+    background-color: black;
+    border-radius: 10px;
+    color: coral;
+}
+
+input:focus{
+    background-color: coral;
+    border-style: double;
+    color: black;
+}
+
+input:hover{
+    border-style: double;
+}
+
+.mid_text{
+    width: 100%;
+    height: 100%;
+}
