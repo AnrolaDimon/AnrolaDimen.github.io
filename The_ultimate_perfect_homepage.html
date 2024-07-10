@@ -9,6 +9,10 @@
     <header>
         <a href="#" class="logo">anrola</a>
         <div class="righSide">
+            <div class="btns sound">
+                <ion-icon name="volume-mute-outline"></ion-icon>
+                <ion-icon name="volume-high-outline"></ion-icon>
+            </div>
             <div class="btns dayNight">
                 <ion-icon name="moon-outline"></ion-icon>
                 <ion-icon name="sunny-outline"></ion-icon>
@@ -36,10 +40,25 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
+        let sound = document.querySelector('.sound')
         let dayNight = document.querySelector('.dayNight')
         let menuToggle = document.querySelector('.menuToggle')
         let body = document.querySelector('body')
         let navigation = document.querySelector('.navigation')
+        const vdo = document.querySelector('video')
+
+        function soundToggle(){
+            const ACTX = new AudioContext();
+            if (ACTX.state == "running"&&vdo.muted) {
+                vdo.muted = false;
+            }else{
+                vdo.muted = true;
+            }
+        }
+        sound.onclick = function (){
+            sound.classList.toggle('active')
+            soundToggle();
+        }
 
         dayNight.onclick = function (){
             body.classList.toggle('dark')
