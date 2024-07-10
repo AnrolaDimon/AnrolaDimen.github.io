@@ -17,7 +17,7 @@ header{
     align-items: center;
     width: 100%;
     padding: 40px 100px;
-    z-index: 10000;
+    z-index: 100;
 }
 
 header .logo{
@@ -138,4 +138,26 @@ header .logo{
 .navigation li a:hover{
     background-color: var(--black);
     color: var(--white);
+}
+
+.loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: lightblue;
+    z-index: 101;
+    background-color: lightblue;
+}
+
+.loading.done{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: lightblue;
+    z-index: -1;
+    background-color: lightblue;
 }
