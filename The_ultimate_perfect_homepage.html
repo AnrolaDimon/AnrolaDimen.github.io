@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ch">
 <head>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
@@ -6,6 +7,10 @@
     <link rel="stylesheet" type="text/css" href="CSS_home.css">
     <meta charset="UTF-8">
     <title>主页</title>
+
+    <script>
+        vdo.play()
+    </script>
 </head>
 <body>
     <header>
@@ -33,7 +38,7 @@
 
     <!-- 菜单栏 -->
     <ul class="navigation">
-        <li><a href="">主页</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#">123</a></li>
         <li><a href="#">456</a></li>
         <li><a href="#">789</a></li>
@@ -52,8 +57,10 @@
         function soundToggle(){
             const ACTX = new AudioContext();
             if (ACTX.state == "running"&&vdo.muted) {
+                vdo.play()
                 vdo.muted = false;
             }else{
+                vdo.play()
                 vdo.muted = true;
             }
         }
