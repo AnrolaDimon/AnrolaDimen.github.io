@@ -7,14 +7,16 @@
     <link rel="stylesheet" type="text/css" href="CSS_home.css">
     <meta charset="UTF-8">
     <title>主页</title>
-    <script>
-        vdo.muted = true;
-        vdo.play();
-    </script>
 </head>
+<script>
+    vdo.muted = true;
+    vdo.play();
+</script>
 <body>
     <!--加载界面-->
-    <div class="loading"></div>
+    <div class="loading">
+        <button class="entry">进入！</button>
+    </div>
 
     <header>
         <a href="#" class="logo">anrola</a>
@@ -55,6 +57,8 @@
         let menuToggle = document.querySelector('.menuToggle')
         let body = document.querySelector('body')
         let navigation = document.querySelector('.navigation')
+        let entry = document.querySelector('.entry')
+        let loading = document.querySelector('.loading')
         const vdo = document.querySelector('video')
 
         function soundToggle(){
@@ -81,12 +85,15 @@
             menuToggle.classList.toggle('active')
             navigation.classList.toggle('active')
         }
+
+        entry.onclick = function (){
+            loading.classList.add("done")
+        }
     </script>
 </body>
 <script>
-    let loading = document.querySelector(".loading")
     window.onload = function (){
-        loading.classList.add("done");
+        entry.classList.add('visible')
     }
 </script>
 </html>
