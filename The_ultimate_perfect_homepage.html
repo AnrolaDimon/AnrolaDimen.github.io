@@ -7,12 +7,11 @@
     <link rel="stylesheet" type="text/css" href="CSS_home.css">
     <meta charset="UTF-8">
     <title>主页</title>
-
-    <script>
-        vdo.play()
-    </script>
 </head>
 <body>
+    <!--加载界面-->
+    <div class="loading"></div>
+
     <header>
         <a href="#" class="logo">anrola</a>
         <div class="righSide">
@@ -80,4 +79,10 @@
         }
     </script>
 </body>
+<script>
+    let loading = document.querySelector(".loading")
+    window.onload = function (){
+        loading.classList.add("done");
+    }
+</script>
 </html>
