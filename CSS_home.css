@@ -48,7 +48,6 @@ header .logo{
 .btns ion-icon{
     font-size: 1.5em;
     color: var(--black);
-
 }
 
 .btns.menuToggle ion-icon{
@@ -149,6 +148,9 @@ header .logo{
     color: lightblue;
     z-index: 101;
     background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loading.done{
@@ -160,4 +162,18 @@ header .logo{
     color: lightblue;
     z-index: -1;
     background-color: lightblue;
+}
+
+.entry{
+    position: relative;
+    z-index: 102;
+    width: 10%;
+    height: 7%;
+    cursor: pointer;
+    margin: 10px;
+    visibility: hidden;
+}
+
+.entry.visible{
+    visibility: visible;
 }
