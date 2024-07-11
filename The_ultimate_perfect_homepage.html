@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="ch">
-<script>
-    window.onload = function (){
-        vdo.addEventListener('canplaythrough',function () {
-            entry.classList.add('visible')
-        })
-    }
-</script>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <link rel="stylesheet" href="loading-bar.css">
@@ -16,6 +9,7 @@
     <title>主页</title>
 </head>
 <body>
+
     <!--加载界面-->
     <div class="loading">
         <button class="entry">进入！</button>
@@ -39,7 +33,9 @@
         </div>
     </header>
     <section class="main">
-        <video src="src/video.mp4" loop muted></video>
+        <!--<iframe class="video" src="//player.bilibili.com/player.html?isOutside=true&aid=615917420&bvid=BV1Qh4y1j7fN&cid=1197176590&p=1&autoplay=0&muted=true"  border="0" border="no"></iframe>
+        -->
+        <video src="https://hsqs.bmwax.cn/202407111454/14e1392a1251070f943b67a70abdd89e/mqrcode%2F526574%2F1720680862_1661901663_video1.mp4" loop></video>
         <img src="src/mask.png" class="mask">
         <h2>ANROLA</h2>
     </section>
@@ -89,11 +85,16 @@
             navigation.classList.toggle('active')
         }
 
-        entry.onclick = function (){
+        entry.onclick = function () {
             loading.classList.add("done")
-            vdo.muted = false;
+            vdo.muted = false
             vdo.play()
         }
     </script>
 </body>
+<script>
+    window.onload = function (){
+            entry.classList.add('visible')
+    }
+</script>
 </html>
