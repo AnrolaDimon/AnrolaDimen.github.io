@@ -101,8 +101,10 @@
 <!--等待加载 显示进入按钮-->
 <script>
     window.onload = function (){
+        vdo.addEventListener('canplaythrough',function () {
+            loading.classList.add("done")
+        })
         //entry.classList.add('visible')
-        loading.classList.add("done")
     }
 </script>
 </html>
