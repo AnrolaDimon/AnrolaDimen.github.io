@@ -3,16 +3,21 @@
     padding:0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    overflow: hidden hidden;
 }
 
 :root{
     --black: #333;
     --white: #fff;
+    --gray: #ccc;
 }
 
 body{
+    position: absolute;
     background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .dark{
@@ -21,7 +26,6 @@ body{
 }
 
 header{
-    position: absolute;
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -73,41 +77,22 @@ header .logo{
 
 .main{
     position: relative;
+    top: 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     padding: 10px;
     align-items: center;
     justify-content: center;
-    background: var(--black);
 }
-.main video{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.main h2{
-    position: relative;
-    z-index: 3;
-    font-size: 16vw;
-    color: #fff;
-    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-}
-
-.mask{
+.main .central_element{
+    word-wrap: break-word;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    user-select: none;
-    mix-blend-mode: screen;
-}
-.dark .mask{
-    filter: invert(1);
-    mix-blend-mode: multiply;
+    border-radius: 15px;
+    width: 50%;
+    background-size: 100% 100%;
+    background: var(--gray);
 }
 
 .navigation{
@@ -128,7 +113,7 @@ header .logo{
     left: 0;
 }
 .navigation li{
-   list-style: none;
+    list-style: none;
 }
 .navigation li a{
     display: inline-flex;
@@ -189,10 +174,15 @@ header .logo{
     visibility: visible;
 }
 
+.bottom{
+    justify-content:space-between;
+    display: flex;
+    flex-direction: row;
+}
+
 .copyright{
-    position: absolute;
-    left: 100px;
-    bottom: 40px;
+    left: 10px;
+    bottom: 0px;
     z-index: 4;
     font-weight: bold;
     font-size: 1.5em;
@@ -200,12 +190,12 @@ header .logo{
 }
 
 .about{
-    position: absolute;
-    right: 40px;
-    bottom: 30px;
+    position: relative;
+    right: 10px;
+    bottom: 5px;
     z-index: 4;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .about li{
     list-style: none;
@@ -213,7 +203,7 @@ header .logo{
 .about li a{
     text-decoration: none;
     color: var(--black);
-    font-size: 1.75em;
+    font-size: 2em;
 }
 
 @media (max-width: 768px) {

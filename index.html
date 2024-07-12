@@ -11,12 +11,10 @@
     <title>主页</title>
 </head>
 <body>
-
     <!--加载界面的挡板-->
     <div class="loading">
         <button class="entry">进入！</button>
     </div>
-
     <header>
         <a href="#" class="logo">anrola</a>
         <div class="righSide">
@@ -34,12 +32,14 @@
             </div>
         </div>
     </header>
+
     <section class="main">
+        <!--主主要内容-->
         <video src="src/video.mp4" preload="auto" loop autoplay muted></video>
-        <img src="src/mask.png" class="mask">
+        <img src="src/mask.png" class="mask" alt="mask">
         <h2>ANROLA</h2>
+        <!--右下角版权 左下角引索-->
         <p class="copyright">LHX - 2024.7.12 锐意制作</p>
-        <!--左下角引索-->
         <ul class="about">
             <li><a href="https://github.com/AnrolaDimon/AnrolaDimon.github.io" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
             <li><a href="https://www.douyin.com/user/MS4wLjABAAAAXSr9L4u7_mp_yhEJN0Ht3_01vGNMbWxTmYMuvJGOyEk" target="_blank"><ion-icon name="logo-tiktok"></ion-icon></a></li>
@@ -49,16 +49,14 @@
 
     <!-- 菜单栏 -->
     <ul class="navigation">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">123</a></li>
+        <li><a class="btn_page_1" href="index.html">Home</a></li>
+        <li><a href="page_1.html">123</a></li>
         <li><a href="#">456</a></li>
         <li><a href="#">789</a></li>
     </ul>
-
     <!--icon图标载入  ionicons-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <script>
         let sound = document.querySelector('.sound')
         let dayNight = document.querySelector('.dayNight')
@@ -68,6 +66,7 @@
         let entry = document.querySelector('.entry')
         let loading = document.querySelector('.loading')
         const vdo = document.querySelector('video')
+        let btn_page_1 = document.querySelector('.btn_page_1')
 
         function soundToggle(){
             const ACTX = new AudioContext();
@@ -84,17 +83,14 @@
             sound.classList.toggle('active')
             soundToggle();
         }
-
         dayNight.onclick = function (){
             body.classList.toggle('dark')
             dayNight.classList.toggle('active')
         }
-
         menuToggle.onclick = function (){
             menuToggle.classList.toggle('active')
             navigation.classList.toggle('active')
         }
-
         entry.onclick = function () {
             loading.classList.add("done")
             //vdo.muted = false
