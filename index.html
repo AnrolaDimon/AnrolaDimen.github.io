@@ -2,15 +2,17 @@
 
 <html lang="ch">
 <head>
+    <!--加载进度条 pace.js-->
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <link rel="stylesheet" href="loading-bar.css">
+
     <link rel="stylesheet" type="text/css" href="CSS_home.css">
     <meta charset="UTF-8">
     <title>主页</title>
 </head>
 <body>
 
-    <!--加载界面-->
+    <!--加载界面的挡板-->
     <div class="loading">
         <button class="entry">进入！</button>
     </div>
@@ -33,23 +35,30 @@
         </div>
     </header>
     <section class="main">
-        <!--<iframe class="video" src="//player.bilibili.com/player.html?isOutside=true&aid=615917420&bvid=BV1Qh4y1j7fN&cid=1197176590&p=1&autoplay=0&muted=true"  border="0" border="no"></iframe>
-        -->
-        <video src="src/video.mp4" loop></video>
+        <video src="src/video.mp4" preload="auto" loop autoplay muted></video>
         <img src="src/mask.png" class="mask">
         <h2>ANROLA</h2>
+        <p class="copyright">LHX - 2024.7.12 锐意制作</p>
+        <!--左下角引索-->
+        <ul class="about">
+            <li><a href="https://github.com/AnrolaDimon/AnrolaDimon.github.io" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="https://www.douyin.com/user/MS4wLjABAAAAXSr9L4u7_mp_yhEJN0Ht3_01vGNMbWxTmYMuvJGOyEk" target="_blank"><ion-icon name="logo-tiktok"></ion-icon></a></li>
+            <li><a href="https://steamcommunity.com/id/Anrola/" target="_blank"><ion-icon name="logo-steam"></ion-icon></a></li>
+        </ul>
     </section>
 
     <!-- 菜单栏 -->
     <ul class="navigation">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">123</a></li>
         <li><a href="#">456</a></li>
         <li><a href="#">789</a></li>
     </ul>
 
+    <!--icon图标载入  ionicons-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <script>
         let sound = document.querySelector('.sound')
         let dayNight = document.querySelector('.dayNight')
@@ -70,6 +79,7 @@
                 vdo.muted = true;
             }
         }
+
         sound.onclick = function (){
             sound.classList.toggle('active')
             soundToggle();
@@ -87,14 +97,16 @@
 
         entry.onclick = function () {
             loading.classList.add("done")
-            vdo.muted = false
-            vdo.play()
+            //vdo.muted = false
+            //vdo.play()
         }
     </script>
 </body>
+<!--等待加载 显示进入按钮-->
 <script>
     window.onload = function (){
-            entry.classList.add('visible')
+        //entry.classList.add('visible')
+        loading.classList.add("done")
     }
 </script>
 </html>
