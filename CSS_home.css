@@ -15,6 +15,81 @@ body{
     background-color: var(--white);
 }
 
+.loading{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: lightblue;
+    z-index: 101;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+}
+.loading.done{
+    visibility: hidden;
+}
+.loading span{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    box-shadow: -8px -8px 15px 0 rgba(255, 255, 255, 1),
+    8px 8px 15px rgba(0, 0, 0, 0.2),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 5px rgba(255, 255, 255, 1);
+    transition:width 0.5s, height 0.5s,filter 5s;
+}
+.loading span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5c89ff;
+    border-radius: 50%;
+    box-shadow:
+    inset 3px 3px 5px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 5px rgba(255, 255, 255, 1);
+    transform: scale(0);
+    animation: animate 2s linear infinite,
+    animateColor 5s linear infinite;
+    animation-delay: calc(var(--i)*0.2s);
+}
+.loading span:hover{
+    transition:width 0.5s, height 0.5s,filter 5s;
+    width: 80px;
+    height: 80px;
+}
+.loading span:active{
+    width: 60px;
+    height: 60px;
+    transition: width 0s, height 0s;
+    filter: drop-shadow(10px 10px 10px rgb(59, 205, 255));
+}
+@keyframes animate{
+    0%{
+        transform: scale(0);
+    }
+    10%{
+        transform: scale(1);
+    }
+}
+@keyframes animateColor{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
 .dark{
     --black: #fff;
     --white: #333;
@@ -28,7 +103,6 @@ header{
     width: 100%;
     padding: 40px 100px;
     z-index: 100;
-    background: var(--white);
 }
 header .logo{
     position:relative;
@@ -72,7 +146,7 @@ header .logo{
 }
 
 .main{
-    position: relative;
+    position: absolute;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -101,7 +175,7 @@ header .logo{
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 3;
     user-select: none;
     mix-blend-mode: screen;
 }
@@ -142,51 +216,6 @@ header .logo{
 .navigation li a:hover{
     background-color: var(--black);
     color: var(--white);
-}
-
-.loading{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: lightblue;
-    z-index: 101;
-    background-color: lightblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loading.done{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: lightblue;
-    z-index: -1;
-    background-color: lightblue;
-}
-
-.entry{
-    position: relative;
-    z-index: 102;
-    width: 10%;
-    height: 7%;
-    cursor: pointer;
-    margin: 10px;
-    visibility: hidden;
-    border-radius: 35px;
-    font-size: 1.25em;
-    text-decoration: none;
-}
-.entry:hover{
-    background-color: ivory;
-    border: 4px solid grey;
-    font-weight: 700;
-}
-.entry.visible{
-    visibility: visible;
 }
 
 .copyright{

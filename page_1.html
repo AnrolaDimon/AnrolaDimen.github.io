@@ -2,17 +2,22 @@
 
 <html lang="ch">
 <head>
-    <!--加载进度条 pace.js-->
-    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
-    <link rel="stylesheet" href="loading-bar.css">
-
     <link rel="stylesheet" type="text/css" href="CSS_pages.css">
     <meta charset="UTF-8">
     <title>page_1</title>
 </head>
 <body>
-
 <!--加载界面的挡板-->
+<div class="loading">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+    <span style="--i:6;"></span>
+</div>
+</div>
 <header>
     <a href="#" class="logo">anrola</a>
     <div class="righSide">
@@ -30,7 +35,7 @@
 <section class="main">
     <!--主要内容-->
     <span class="central_element">
-    111111111111111111111111111111111111111111111111111111111111111111111111
+        111111111111111111111111111111111111111111111111111111111111111111111111
 
 
     </span>
@@ -49,9 +54,16 @@
     <!--右下角版权 左下角引索-->
     <p class="copyright">LHX - 2024.7.12 锐意制作</p>
     <ul class="about">
-        <li><a href="https://github.com/AnrolaDimon/AnrolaDimon.github.io" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
-        <li><a href="https://www.douyin.com/user/MS4wLjABAAAAXSr9L4u7_mp_yhEJN0Ht3_01vGNMbWxTmYMuvJGOyEk" target="_blank"><ion-icon name="logo-tiktok"></ion-icon></a></li>
-        <li><a href="https://steamcommunity.com/id/Anrola/" target="_blank"><ion-icon name="logo-steam"></ion-icon></a></li>
+        <li><a href="https://github.com/AnrolaDimon/AnrolaDimon.github.io" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+        </a></li>
+        <li><a href="https://www.douyin.com/user/MS4wLjABAAAAXSr9L4u7_mp_yhEJN0Ht3_01vGNMbWxTmYMuvJGOyEk"
+               target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+        </a></li>
+        <li><a href="https://steamcommunity.com/id/Anrola/" target="_blank">
+            <ion-icon name="logo-steam"></ion-icon>
+        </a></li>
     </ul>
 </div>
 
@@ -67,11 +79,11 @@
     let navigation = document.querySelector('.navigation')
     let loading = document.querySelector('.loading')
 
-    dayNight.onclick = function (){
+    dayNight.onclick = function () {
         body.classList.toggle('dark')
         dayNight.classList.toggle('active')
     }
-    menuToggle.onclick = function (){
+    menuToggle.onclick = function () {
         menuToggle.classList.toggle('active')
         navigation.classList.toggle('active')
     }
@@ -79,9 +91,9 @@
 </body>
 <!--等待加载 显示进入按钮-->
 <script>
-    window.onload = function (){
-        //entry.classList.add('visible')
+    window.onload = function () {
         loading.classList.add("done")
+        //entry.classList.add('visible')
     }
 </script>
 </html>
