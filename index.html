@@ -6,6 +6,10 @@
     <meta charset="UTF-8">
     <title>主页</title>
 </head>
+<script type="text/javascript">
+    var p = navigator.userAgent;
+    var i
+</script>
 <body>
     <!--加载界面的挡板-->
     <div class="loading">
@@ -70,21 +74,17 @@
         let entry = document.querySelector('.entry')
         let loading = document.querySelector('.loading')
         const vdo = document.querySelector('video')
-        let btn_page_1 = document.querySelector('.btn_page_1')
 
         function soundToggle(){
             const ACTX = new AudioContext();
-            if (ACTX.state == "running"&&vdo.muted) {
-                vdo.muted = false;
-            }else{
-                vdo.muted = true;
-            }
+            vdo.muted = !(ACTX.state === "running" && vdo.muted);
         }
 
         sound.onclick = function (){
             sound.classList.toggle('active')
-            soundToggle();
-            vdo.play;
+            soundToggle()
+            vdo.play()
+
         }
         dayNight.onclick = function (){
             body.classList.toggle('dark')
@@ -108,6 +108,7 @@
             loading.classList.add("done")
             vdo.play()
         })
+        vdo.load()
         //entry.classList.add('visible')
     }
 </script>
