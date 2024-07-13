@@ -38,7 +38,7 @@
     <section class="main">
         <!--主主要内容-->
         <video preload="auto" loop muted>
-            <source src="http://anrolapage.pages.dev/src/video.mp4">
+            <source src="src/video.mp4">
         </video>
         <img src="src/mask.png" class="mask" alt="mask">
         <h2>ANROLA</h2>
@@ -75,10 +75,8 @@
         function soundToggle(){
             const ACTX = new AudioContext();
             if (ACTX.state == "running"&&vdo.muted) {
-                vdo.play()
                 vdo.muted = false;
             }else{
-                vdo.play()
                 vdo.muted = true;
             }
         }
@@ -86,6 +84,7 @@
         sound.onclick = function (){
             sound.classList.toggle('active')
             soundToggle();
+            vdo.play;
         }
         dayNight.onclick = function (){
             body.classList.toggle('dark')
