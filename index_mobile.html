@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="ch">
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS_home.css">
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<script>
+    function redirect() {
+        // 获取设备信息
+        let userAgent = navigator.userAgent.toLowerCase()
+
+        let device = /ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/
+
+        if (device.test(userAgent)) {
+
+        }else {
+            window.location.href = "index.html"
+        }
+    }
+    redirect()
+</script>
+<body>
+<!--加载界面的挡板-->
+<div class="loading">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+    <span style="--i:6;"></span>
+</div>
+<header>
+    <a href="#" class="logo">anrola</a>
+    <div class="righSide">
+        <div class="btns sound">
+            <ion-icon name="volume-mute-outline"></ion-icon>
+            <ion-icon name="volume-high-outline"></ion-icon>
+        </div>
+        <div class="btns dayNight">
+            <ion-icon name="moon-outline"></ion-icon>
+            <ion-icon name="sunny-outline"></ion-icon>
+        </div>
+        <div class="btns menuToggle">
+            <ion-icon name="menu-outline"></ion-icon>
+            <ion-icon name="close-outline"></ion-icon>
+        </div>
+    </div>
+</header>
+
+<section class="main">
+    <!--主主要内容-->
+    <h2> ANROLA </h2>
+    <!--右下角版权 左下角引索-->
+    <p class="copyright">LHX - 2024.7.12 锐意制作</p>
+    <ul class="about">
+        <li><a href="https://github.com/AnrolaDimon/AnrolaDimon.github.io" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <li><a href="https://www.douyin.com/user/MS4wLjABAAAAXSr9L4u7_mp_yhEJN0Ht3_01vGNMbWxTmYMuvJGOyEk" target="_blank"><ion-icon name="logo-tiktok"></ion-icon></a></li>
+        <li><a href="https://steamcommunity.com/id/Anrola/" target="_blank"><ion-icon name="logo-steam"></ion-icon></a></li>
+    </ul>
+</section>
+
+<!-- 菜单栏 -->
+<ul class="navigation">
+    <li><a class="btn_page_1" href="index.html">Home</a></li>
+    <li><a href="page_1.html">123</a></li>
+    <li><a href="#">456</a></li>
+    <li><a href="#">789</a></li>
+</ul>
+<!--icon图标载入  ionicons-->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    let sound = document.querySelector('.sound')
+    let dayNight = document.querySelector('.dayNight')
+    let menuToggle = document.querySelector('.menuToggle')
+    let body = document.querySelector('body')
+    let navigation = document.querySelector('.navigation')
+    let entry = document.querySelector('.entry')
+    let loading = document.querySelector('.loading')
+
+    function soundToggle(){
+        const ACTX = new AudioContext();
+        vdo.muted = !(ACTX.state === "running" && vdo.muted);
+    }
+
+    sound.onclick = function (){
+        sound.classList.toggle('active')
+
+    }
+    dayNight.onclick = function (){
+        body.classList.toggle('dark')
+        dayNight.classList.toggle('active')
+    }
+    menuToggle.onclick = function (){
+        menuToggle.classList.toggle('active')
+        navigation.classList.toggle('active')
+    }
+    entry.onclick = function () {
+        loading.classList.add("done")
+        //vdo.muted = false
+        //vdo.play()
+    }
+</script>
+</body>
+<!--等待加载 显示进入按钮-->
+<script>
+    window.onload = function (){
+        loading.classList.add("done")
+    }
+</script>
+</html>

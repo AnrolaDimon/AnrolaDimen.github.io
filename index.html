@@ -6,9 +6,18 @@
     <meta charset="UTF-8">
     <title>主页</title>
 </head>
-<script type="text/javascript">
-    var p = navigator.userAgent;
-    var i
+<script>
+    function redirect() {
+        // 获取设备信息
+        let userAgent = navigator.userAgent.toLowerCase()
+
+        let device = /ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/
+
+        if (device.test(userAgent)) {
+            window.location.href = "index_mobile.html"
+        }
+    }
+    redirect()
 </script>
 <body>
     <!--加载界面的挡板-->
@@ -45,7 +54,7 @@
             <source src="src/video.mp4">
         </video>
         <img src="src/mask.png" class="mask" alt="mask">
-        <h2>ANROLA</h2>
+        <h2> ANROLA </h2>
         <!--右下角版权 左下角引索-->
         <p class="copyright">LHX - 2024.7.12 锐意制作</p>
         <ul class="about">

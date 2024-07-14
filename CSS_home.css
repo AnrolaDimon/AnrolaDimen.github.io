@@ -9,6 +9,8 @@
 :root{
     --black: #333;
     --white: #fff;
+    --lightblue: lightblue;
+    --darkpurple: #9c8bb6;
 }
 
 body{
@@ -93,6 +95,8 @@ body{
 .dark{
     --black: #fff;
     --white: #333;
+    --lightblue: #9c8bb6;
+    --darkpurple: lightblue;
 }
 
 header{
@@ -153,7 +157,7 @@ header .logo{
     padding: 10px;
     align-items: center;
     justify-content: center;
-    background: var(--black);
+    background: var(--white);
 }
 .main video{
     z-index: 3;
@@ -164,10 +168,22 @@ header .logo{
 }
 .main h2{
     position: relative;
-    z-index: 3;
+    z-index: 4;
     font-size: 16vw;
     color: #fff;
-    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    text-shadow: -5px 10px 5px rgba(0, 0, 0, 0.3);
+    white-space: pre;
+    user-select: none;
+    transition: text-shadow 0.5s, transform 0.5s;
+}
+.main h2:focus,
+.main h2:hover{
+    text-shadow: 5px 10px 10px var(--lightblue);
+}
+.main h2:active{
+    transform: translate(2px,6px);
+    transition: text-shadow 0s, transform 0s;
+    text-shadow: 1px 5px 5px var(--darkpurple);
 }
 
 .mask{
