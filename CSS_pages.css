@@ -3,12 +3,24 @@
     padding:0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: var(--white);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--black);
+        border-radius: 25px;
+    }
 }
 
 :root{
     --black: #333;
     --white: #fff;
     --gray: #ccc;
+    --lightblue: lightblue;
+    --darkpurple: #9c8bb6;
 }
 
 body{
@@ -19,6 +31,7 @@ body{
     height: 100%;
     width: 100%;
 }
+
 
 .loading{
     display: flex;
@@ -86,6 +99,8 @@ body{
 .dark{
     --black: #fff;
     --white: #333;
+    --lightblue: #9c8bb6;
+    --darkpurple: lightblue;
 }
 
 header{
@@ -138,6 +153,14 @@ header .logo{
     display: none;
 }
 
+.middle{
+    word-wrap: break-word;
+    top: 0;
+    width: 100%;
+    min-height: 90%;
+    display: flex;
+    flex-direction: row;
+}
 .main{
     position: relative;
     top: 0;
@@ -153,9 +176,93 @@ header .logo{
     position: absolute;
     top: 0;
     border-radius: 15px;
-    width: 50%;
+    width: 80%;
+    height: 100%;
     background-size: 100% 100%;
     background: var(--gray);
+}
+.main .central_element iframe{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.left_menu{
+    position: relative;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    overflow-y: scroll;
+    button{
+        width: 90%;
+        height: 30px;
+        border: 1px solid var(--black);
+        border-radius: 5px;
+        background: var(--white);
+        color: var(--black);
+    }
+    button.active{
+        border: 3px solid var(--lightblue);
+        box-shadow: inset 0 0 10px var(--lightblue);
+    }
+    button:hover{
+        background-color: var(--gray);
+    }
+    .buttonContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    li{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+.left_menu .drawer{
+    width: 90%;
+    display: none;
+    transform: translateY(-30px);
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    animation: animate_drawer_close 0.1s linear;
+}
+.left_menu .drawer.active{
+    animation: animate_drawer_open 0.1s linear;
+    display: block;
+    transform: translateY(0px);
+}
+.left_menu .drawer a{
+    text-decoration: none;
+    color: var(--black);
+}
+.left_menu .drawer a:hover{
+    background-color: var(--black);
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+}
+@keyframes animate_drawer_open{
+    0%{
+        transition: 0.5s;
+        transform: translateY(-30px);
+        display: block;
+    }
+    100%{
+        transform: translateY(0px);
+        display: block;
+    }
+}
+@keyframes animate_drawer_close{
+    0%{
+        transition: 0.5s;
+        transform: translateY(0px);
+        display: block;
+    }
+    100%{
+        transform: translateY(-30px);
+        display: block;
+    }
 }
 
 .navigation{
@@ -191,6 +298,9 @@ header .logo{
     background-color: var(--black);
     color: var(--white);
 }
+.navigation li a:active{
+    color: var(--black);
+}
 
 .entry{
     position: relative;
@@ -218,16 +328,14 @@ header .logo{
     display: flex;
     flex-direction: row;
 }
-
 .copyright{
     left: 10px;
-    bottom: 0px;
+    bottom: 0;
     z-index: 4;
     font-weight: bold;
     font-size: 1.5em;
     color: var(--black);
 }
-
 .about{
     position: relative;
     right: 10px;
@@ -243,6 +351,10 @@ header .logo{
     text-decoration: none;
     color: var(--black);
     font-size: 2em;
+}
+
+::-webkit-scrollbar-track{
+    width: 1px;
 }
 
 @media (max-width: 768px) {

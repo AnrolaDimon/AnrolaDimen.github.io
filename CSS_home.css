@@ -8,7 +8,8 @@
 
 :root{
     --black: #333;
-    --white: #fff;
+    --white: #ffffff;
+    --gray: #ccc;
     --lightblue: lightblue;
     --darkpurple: #9c8bb6;
 }

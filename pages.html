@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="ch">
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS_pages.css">
+    <meta charset="UTF-8">
+    <title>page_1</title>
+</head>
+<body>
+<!--加载界面的挡板-->
+<div class="loading">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+    <span style="--i:6;"></span>
+</div>
+<header>
+    <a href="#" class="logo">anrola</a>
+    <div class="righSide">
+        <div class="btns dayNight">
+            <ion-icon name="moon-outline"></ion-icon>
+            <ion-icon name="sunny-outline"></ion-icon>
+        </div>
+        <div class="btns menuToggle">
+            <ion-icon name="menu-outline"></ion-icon>
+            <ion-icon name="close-outline"></ion-icon>
+        </div>
+    </div>
+</header>
+<div class="middle">
+    <div class="left_menu">
+       <ul class="buttonContainer">
+           <li>
+               <button class="button B_1" onclick="openDrawer(1)">HTML</button>
+               <ul class="drawer D_1">
+                   <li><a class="A_1" onclick="switchPages(1)">1111111111</a></li>
+                   <li><a class="A_2" href="#">2222222222</a></li>
+                   <li><a class="A_3" href="#">3333333333</a></li>
+
+               </ul>
+           </li>
+           <li>
+               <button class="button B_2" onclick="openDrawer(2)">CSS</button>
+               <ul class="drawer D_2">
+                   <li><a href="#">1111111111</a></li>
+                   <li><a href="#">2222222222</a></li>
+                   <li><a href="#">3333333333</a></li>
+               </ul>
+           </li>
+       </ul>
+    </div>
+    <section class="main">
+        <!--主要内容-->
+        <span class="central_element">
+            <iframe class="iframe" src=""></iframe>
+        </span>
+    </section>
+</div>
+
+<!-- 菜单栏 -->
+<ul class="navigation">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pages.html">123</a></li>
+    <li><a href="#">456</a></li>
+    <li><a href="#">789</a></li>
+</ul>
+
+<div class="bottom">
+    <!--右下角版权 左下角引索-->
+    <p class="copyright">LHX - 2024.7.12 锐意制作</p>
+    <ul class="about">
+        <li><a href="https://github.com/AnrolaDimon/AnrolaDimon.github.io" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+        </a></li>
+        <li><a href="https://www.douyin.com/user/MS4wLjABAAAAXSr9L4u7_mp_yhEJN0Ht3_01vGNMbWxTmYMuvJGOyEk"
+               target="_blank">
+            <ion-icon name="logo-tiktok"></ion-icon>
+        </a></li>
+        <li><a href="https://steamcommunity.com/id/Anrola/" target="_blank">
+            <ion-icon name="logo-steam"></ion-icon>
+        </a></li>
+    </ul>
+</div>
+
+<!--icon图标载入  ionicons-->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<script>
+    let dayNight = document.querySelector('.dayNight')
+    let menuToggle = document.querySelector('.menuToggle')
+    let body = document.querySelector('body')
+    let navigation = document.querySelector('.navigation')
+    let loading = document.querySelector('.loading')
+
+    dayNight.onclick = function () {
+        body.classList.toggle('dark')
+        dayNight.classList.toggle('active')
+    }
+    menuToggle.onclick = function () {
+        menuToggle.classList.toggle('active')
+        navigation.classList.toggle('active')
+    }
+
+    function openDrawer(i){
+        let D = document.querySelector(".D_"+i)
+        let B = document.querySelector(".B_"+i)
+        D.classList.toggle('active')
+        B.classList.toggle('active')
+        return 0
+    }
+
+    function switchPages(i){
+        let A = document.querySelector(".A_"+i)
+        let B = document.querySelector(".B_"+i)
+        let IF = document.querySelector("iframe")
+        let t = B.innerText
+        IF.setAttribute("src","pages/pages_"+t+"_"+i+".html")
+    }
+</script>
+</body>
+<!--等待加载 显示进入按钮-->
+<script>
+    window.onload = function () {
+        loading.classList.add("done")
+        //entry.classList.add('visible')
+    }
+</script>
+</html>
