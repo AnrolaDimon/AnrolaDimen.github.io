@@ -5,22 +5,128 @@
     <title>pages_HTML_1</title>
 </head>
 <style>
-    body{
+    .main{
         white-space: pre;
     }
     code{
         background-color: lightblue;
+        line-height: 0;
+    }
+    .idMenu{
+        top:0;
+        display: flex;
+        width: 80%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        background-color: #cccccc;
+        border: 1px solid black;
+    }
+    .toTop{
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
     }
 </style>
 <body>
-<h4 id="#HTML_Heading">HTML标题</h4>
-HTML 标题（Heading）是通过&lth1> - &lth6> 标签来定义的。
-标题独占一行，并且和下一行留有间距，h1最大，h6最小。
-例如：
-<code>
-    &lth1>这是一个标题&lt/h1>
-    &lth2>这是一个标题&lt/h2>
-    &lth3>这是一个标题&lt/h3>
-</code>
+<a href="#idMenu">
+    <button class="toTop">
+        返回<br>
+        顶部
+    </button>
+</a>
+
+
+<div id="idMenu" class="idMenu">
+    <a href="#HTML_DOCTYPE">声明</a>
+    <a href="#HTML_!--">注释</a>
+    <a href="#HTML_h">标题</a>
+    <a href="#HTML_p">段落</a>
+    <a href="#HTML_br">换行</a>
+    <a href="#HTML_a">链接</a>
+    <a href="#HTML_img">图像</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+    <a href="#HTML_#">#</a>
+</div>
+
+<div class="main">
+    <!--以下开始书写-->
+    <h4 id="HTML_DOCTYPE">声明</h4>
+    所有HTML文档都必须以<!DOCTYPE>声明开始。
+    声明不区分大小写，也没有结束标签。
+    <code>
+        &lt!DOCTYPE html>
+    </code>
+
+    <h4 id="HTML_!--">注释</h4>
+    &lt!--注释内容-->
+    <code>
+        &lt!--注释内容-->
+    </code>
+
+    <h4 id="HTML_h">标题</h4>
+    HTML 标题（Heading）是通过&lth1> - &lth6> 标签来定义的。
+    标题独占一行，并且和下一行留有间距，h1最大，h6最小。
+    <code>
+        &lth1>这是一个标题&lt/h1>
+        &lth2>这是一个标题&lt/h2>
+    </code>
+
+    <h4 id="HTML_p">段落</h4>
+    HTML 段落是通过标签 &ltp> 来定义的。
+    段落独占一行。
+    <code>
+        &ltp>这是一个段落&lt/p>
+    </code>
+    <h4 id="HTML_br">换行</h4>
+    &ltbr> 元素在文本中生成一个换行（回车）符号。
+    <code>
+        &ltp>我喜欢你&ltbr>
+        也喜欢他
+        &lt/p>
+    </code>
+
+    <h4 id="HTML_a">链接</h4>
+    HTML 链接是通过标签 &lta> 来定义的。
+    可以通过它的href属性创建通向其他网页、文件、电子邮件地址、同一页面内的位置或任何其他 URL 的超链接。
+    如果存在 href 属性，当 &lta> 元素聚焦时按下回车键就会激活它。
+    属性：
+
+    href
+    超链接所指向的 URL。
+
+    download
+    导致浏览器将链接的 URL 视为下载资源。
+    filename：决定文件名的值。/ 和 \ 被转化为下划线（_）。
+
+    target
+    该属性指定在何处显示链接的URL
+    _self：当前页面加载。（默认）
+    _blank：在新标签页打开。
+    _parent：在父框架中打开链接文档。
+    _top：在窗口的整个主体中打开链接的文档。
+    framename：在指定的 iframe 中打开链接文档。
+    <code>
+        &lta href="URL" target="_blank">这是一个链接&lt/a>
+        &lta href="#id">跳转到相同页面的id位置&lt/a>
+    </code>
+
+    <h4 id="HTML_img">图像</h4>
+    &ltimg>元素将一张图像嵌入文档。
+    src 属性是必须的，它包含了你想嵌入的图片的路径。
+    alt 属性是对图像的文本描述，如果由于某种原因无法加载图像，浏览器也会在页面上显示 alt 属性中的备用文本
+    <code>
+        <img src="#" alt="#" />
+    </code>
+    <!--以上开始书写-->
+</div>
 </body>
 </html>
